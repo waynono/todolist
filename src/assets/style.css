@@ -72,25 +72,35 @@ body {
 .cat-chip {
   display: inline-flex;
   align-items: center;
-  padding: 4px 12px;
+  padding: 6px 16px;
   border-radius: 20px;
-  font-size: 12px;
-  border: 1px solid #dcdfe6;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1.5px solid #dcdfe6;
   color: #606266;
+  background: #fff;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
   user-select: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
 .cat-chip:hover {
-  opacity: 0.8;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .cat-chip.active {
   color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cat-chip.active-all {
+  color: #fff;
   border-color: #409eff;
   background-color: #409eff;
+  box-shadow: 0 2px 8px rgba(64, 158, 255, 0.3);
 }
 
 .cat-mgr-btn {

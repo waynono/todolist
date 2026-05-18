@@ -1,7 +1,7 @@
 <template>
   <div class="category-bar">
     <span
-      :class="['cat-chip', { active: modelValue === 'all' }]"
+      :class="['cat-chip', { 'active-all': modelValue === 'all' }]"
       @click="$emit('update:modelValue', 'all')"
     >全部 ({{ store.todos.length }})</span>
     <span
@@ -10,7 +10,7 @@
       :class="['cat-chip', { active: modelValue === cat.id }]"
       :style="modelValue === cat.id
         ? { backgroundColor: cat.color, borderColor: cat.color }
-        : { borderColor: cat.color, color: cat.color }"
+        : { borderColor: cat.color, color: cat.color, backgroundColor: cat.color + '12' }"
       @click="$emit('update:modelValue', cat.id)"
     >{{ cat.name }} ({{ categoryTotalCount(cat.id) }})</span>
     <el-button text size="small" class="cat-mgr-btn" @click="$emit('toggleManager')">
