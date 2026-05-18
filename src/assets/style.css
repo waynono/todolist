@@ -1,0 +1,326 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Noto Sans SC', sans-serif;
+  background: linear-gradient(135deg, #e8eaf6 0%, #f5f0ff 50%, #e3f2fd 100%);
+  background-attachment: fixed;
+  color: #303133;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app-container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+}
+
+.app-header {
+  text-align: center;
+  padding: 28px 0 20px;
+}
+
+.app-header h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #303133;
+}
+
+.app-header h1::before {
+  content: '\1F4CB';
+  margin-right: 8px;
+}
+
+.app-subtitle {
+  font-size: 13px;
+  color: #909399;
+  margin-top: 4px;
+}
+
+/* Add Card */
+.add-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  margin-bottom: 16px;
+}
+
+.add-form-options {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+/* Category Bar */
+.category-bar {
+  display: flex;
+  gap: 8px;
+  padding: 4px 0 12px;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  align-items: center;
+}
+
+.cat-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  border: 1px solid #dcdfe6;
+  color: #606266;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.cat-chip:hover {
+  opacity: 0.8;
+}
+
+.cat-chip.active {
+  color: #fff;
+  border-color: #409eff;
+  background-color: #409eff;
+}
+
+.cat-mgr-btn {
+  margin-left: auto;
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+/* Category Manager */
+.category-manager {
+  margin-bottom: 12px;
+}
+
+.cat-mgr-inner {
+  background: #fff;
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.cat-mgr-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.cat-mgr-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: #f5f7fa;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.cat-mgr-name {
+  font-weight: 500;
+}
+
+.cat-mgr-count {
+  color: #909399;
+  font-size: 12px;
+}
+
+.cat-mgr-add {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Todo List */
+.todo-list {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.todo-main {
+  display: flex;
+  align-items: flex-start;
+  padding: 14px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.2s ease;
+  cursor: default;
+  user-select: none;
+}
+
+.todo-main:last-child {
+  border-bottom: none;
+}
+
+.todo-main:hover {
+  background: #fafafa;
+}
+
+.drag-over .todo-main {
+  border-top: 2px solid #409eff;
+  background: #ecf5ff;
+}
+
+.todo-main.completed .todo-title {
+  text-decoration: line-through;
+  color: #c0c4cc;
+}
+
+.todo-main.overdue .todo-title {
+  color: #f56c6c;
+}
+
+.todo-main.overdue .todo-date {
+  color: #f56c6c;
+  font-weight: 600;
+}
+
+.todo-checkbox {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.todo-body {
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.todo-title {
+  display: block;
+  font-size: 15px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.todo-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+
+.todo-cat-tag {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  color: #fff;
+  line-height: 18px;
+}
+
+.todo-date {
+  font-size: 12px;
+  color: #909399;
+}
+
+.todo-edit {
+  flex: 1;
+  min-width: 0;
+  padding: 0 10px;
+}
+
+.delete-btn {
+  flex-shrink: 0;
+  opacity: 0.4;
+  transition: opacity 0.2s;
+}
+
+.todo-main:hover .delete-btn {
+  opacity: 1;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 48px 16px;
+  color: #c0c4cc;
+}
+
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+/* Footer */
+.app-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  font-size: 13px;
+  color: #909399;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  margin-top: 12px;
+}
+
+.footer-remaining {
+  font-weight: 500;
+}
+
+/* Cat option in select */
+.cat-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cat-dot-sm {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.25s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    padding: 12px 12px 30px;
+  }
+
+  .app-header {
+    padding: 16px 0 12px;
+  }
+
+  .app-header h1 {
+    font-size: 22px;
+  }
+
+  .add-card {
+    padding: 12px;
+  }
+}
